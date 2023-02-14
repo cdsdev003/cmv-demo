@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Prompt:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
+.prompt-font{
+    font-family: 'Prompt', sans-serif;
+}
+.dancing-script-font{
+    font-family: 'Dancing Script', cursive;
+}
+body {
+    overflow-x: hidden;
+    font-family: 'Prompt', sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+    font-family: 'Prompt', sans-serif;
+}
+
+.navbar-brand-img {
+    max-width: 100px;
+}
+
+
+section#banner{
+    max-height: 80vh;
+    height: 80vh;
+    min-height: 600px;
+}
+.header-title{
+    color: var(--gold-light);
+    font-size: 30px
+}
+.header-subtitle{
+    color: var(--gold-light);
+    font-size: 46px;
+    font-weight: bolder;
+}
+.banner-con{
+    position: relative;
+}
+
+.banner-content{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image:var(--linear-green-light);
+}
+
+.banner-content-con {
+    width: 60%;
+    max-width: 900px;
+}
+.banner-con .bg-img-overlay{
+    background-image: url(../img/hero_bg_2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.bg-img-overlay img{
+    object-fit: cover;
+}
+
+.separator-hr{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    color: var(--gold-light);
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.separator-hr hr{
+    max-width: 200px;
+    width: 90%;
+    border: 1.5px solid;
+    opacity: 1;
+}
+
+
+
+.section-title{
+    font-size: 30px;
+}
+
+.section-title-div .separator-hr hr{
+    max-width: 100px;
+}
+
+/*------- property------- */
+.property-content {
+    padding: 10px 20px ;
+    box-shadow: 0 0 20px 0px #7e7e7e24;
+}
+
+.property-slider-wrap,
+.img-property-slide-wrap {
+    position: relative;
+}
+
+.property-slider-wrap .tns-outer .tns-inner,
+.img-property-slide-wrap .tns-outer .tns-inner {
+    padding-bottom: 100px !important;
+}
+
+.property-slider-wrap .tns-nav,
+.img-property-slide-wrap .tns-nav {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 40px;
+    z-index: 2;
+}
+
+.property-slider-wrap .tns-nav button,
+.img-property-slide-wrap .tns-nav button {
+    background: none;
+    border: none;
+    display: inline-block;
+    margin: 2px;
+    position: relative;
+}
+
+.property-slider-wrap .tns-nav button:active,
+.property-slider-wrap .tns-nav button:focus,
+.img-property-slide-wrap .tns-nav button:active,
+.img-property-slide-wrap .tns-nav button:focus {
+    outline: none;
+}
+
+.property-slider-wrap .tns-nav button:before,
+.img-property-slide-wrap .tns-nav button:before {
+    position: absolute;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    right: 0;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}
+
+.property-slider-wrap .tns-nav button.tns-nav-active:before,
+.img-property-slide-wrap .tns-nav button.tns-nav-active:before {
+    background-color: #00204a;
+}
+
+#property-nav {
+    position: absolute;
+    width: 100%;
+    bottom: 64px;
+}
+
+#property-nav span {
+    display: inline-block;
+    cursor: pointer;
+    padding: 7px 20px;
+    border-radius: 30px;
+    background: rgba(0, 32, 74, 0.1);
+    color: #00204a;
+    text-align: center;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}
+
+#property-nav span:hover,
+#property-nav span.active {
+    background: #00204a;
+    color: #fff !important;
+}
+
+#property-nav .prev,
+#property-nav .next {
+    position: absolute;
+    cursor: pointer;
+}
+
+#property-nav .prev:hover,
+#property-nav .next:hover {
+    color: #00204a;
+}
+
+#property-nav .prev {
+    left: 0;
+}
+
+#property-nav .next {
+    right: 0;
+}
+
+.property-item.mb-30 {
+    margin-bottom: 30px;
+}
+
+.property-item .img {
+    position: relative;
+    z-index: 1;
+}
+
+.property-item-img{
+    max-height: 200px;
+    height: 200px;
+}
+.property-item-img img{
+    object-fit: cover;
+}
+
+.property-item .property-content {
+    background: #fff;
+    font-size: 13px;
+    position: relative;
+    width: 100%;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
+    z-index: 2;
+}
+
+.property-item .property-content .price,
+.property-item .property-content .city {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+.property-item .property-content .price {
+    color: var(--primary-green);
+}
+
+.property-item .property-content .price span {
+    position: relative;
+    padding-bottom: 4px;
+    display: inline-block;
+}
+
+.property-item .property-content .price span:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--primary-green);
+}
+
+.property-item .property-content .specs {
+    font-size: 18px;
+}
+
+.property-item .property-content .specs .caption {
+    font-size: 13px;
+}
+
+/* ------------facility---------- */
+
+section#facility{
+    background-color: #7675751f;
+}
+
+.service-item .service-text{
+    padding: 20px 30px;
+}
+.service-text h3{
+    font-size: 22px;
+}
+section#facility .service-item:hover .service-text{
+    background-image:linear-gradient(135deg, rgb(5 69 77 / 50%) 0%, rgb(78 117 122 / 80%) 100%);
+}
+
+/* Text animation start */
+
+.animate-charcter
+{
+  background-image: linear-gradient(
+    -225deg,
+    #0C2340 0%,
+    #0C2340 29%,
+    #C0C0C0 67%,
+    #0C2340 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #C0C0C0;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 5s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+
+.animate-charcter-gold-wave
+{
+
+  background-image: linear-gradient(
+    -225deg,
+    white 0%,
+    white 29%,
+    var(--gold-light) 60%,
+    white 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #C0C0C0;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+
+}
