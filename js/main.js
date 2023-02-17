@@ -57,27 +57,30 @@
 
 
     // Header carousel
-    $(".header-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        loop: true,
-        nav: false,
-        dots: true,
-        items: 1,
-        dotsData: true,
-    });
+    // $(".header-carousel").owlCarousel({
+    //     autoplay: true,
+    //     smartSpeed: 1500,
+    //     loop: true,
+    //     nav: false,
+    //     dots: true,
+    //     items: 1,
+    //     dotsData: true,
+    // });
 
 
     // Testimonials carousel
-    $('.testimonial-carousel').owlCarousel({
-        autoplay: true,
-        smartSpeed: 1000,
-        loop: true,
-        nav: false,
-        dots: true,
-        items: 1,
-        dotsData: true,
-    });
+    // $('.testimonial-carousel').owlCarousel({
+    //     autoplay: true,
+    //     smartSpeed: 1000,
+    //     loop: true,
+    //     nav: false,
+    //     dots: true,
+    //     items: 1,
+    //     dotsData: true,
+    // });
+    const yearFooter = document.getElementById('year');
+    const date = new Date();
+    yearFooter.innerText = date.getFullYear();
 
     
 })(jQuery);
@@ -110,3 +113,28 @@ let tinySdlier = () => {
   }
 };
 tinySdlier();
+
+
+// let swiper = new Swiper(".bloom-swiper", {
+//     slidesPerView: 2,
+//     spaceBetween: 30,
+//     loop: true,
+//     pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+//   });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var splide = new Splide(".splide",{
+      perPage: 1,
+      rewind : true,
+      autoplay:true 
+    } );
+    splide.mount();
+  });
