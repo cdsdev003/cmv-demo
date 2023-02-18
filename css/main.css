@@ -57,7 +57,7 @@ section#banner{
     max-width: 900px;
 }
 .banner-con .bg-img-overlay{
-    background-image: url(../img/hero_bg_2.jpg);
+    background-image: url(../img/gallery/g1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -409,10 +409,108 @@ section#facility .service-item:hover .service-text{
     background-image: linear-gradient(135deg, rgb(5 69 77 / 50%) 0%, rgb(78 117 122 / 80%) 100%);
 }
 
+section#concept{
+    color: var(--secondary-green);
+}
+.concept-highlight{
+    font-weight: bolder;
+    color: var(--primary-green);
+    font-size: 26px;
+}
 
+/* .concept-img-container{
+    
+}
+
+.concept-img-content{
+    z-index: 1;
+    background-image: var(--linear-green-light);
+    position: inherit;
+}
+
+.concept-img-overlay{
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-image: url(../img/concep-bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+} */
+
+.concept-img-item{
+    position: relative;
+}
+
+.concept-img-item .concept-detail{
+    position: absolute;
+    top: 0;
+    text-align: center;
+    height: 100%;
+    max-height: 450px;
+    max-width: 318px;
+    background-color: #302f2f80;
+    padding: 20px 30px;
+    transition: .5s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.concept-img-item:hover .concept-detail{
+    opacity: 1;
+}
+
+.concept-img-item .concept-detail img{
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+.concept-img-item .concept-detail p{
+    color: #fff;
+}
+
+/* promotion */
+
+.promotion-items{
+    padding: 10px;
+    margin-bottom: 2.5rem;
+}
+
+.promotion-items .promotion-card{
+    box-shadow: 0 0 3px 1px #8585851c;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.splide.promotion .splide__arrow--next {
+    right: 0;
+    top: 35%;
+}
+
+.splide.promotion .splide__arrow--prev {
+    left: 0;
+    top: 35%;
+}
+
+.splide.promotion .fact-item h3{
+    font-size: 16px;
+}
+
+.splide.promotion .splide__pagination {
+    bottom: 0;
+}
 @media only screen and (max-width: 1024px) {
     .header-title {
         font-size: 22px;
+    }
+    .concept-img-item .concept-detail {
+        max-height: 489px;
+        max-width: 344px;
     }
 }
 
@@ -444,6 +542,22 @@ section#facility .service-item:hover .service-text{
     .section-title {
         font-size: 22px;
     }
+    .concept-img-item .concept-detail img {
+        max-width: 100px;
+    }
+    .concept-img-item .concept-detail{
+        padding: 20px 15px;
+        font-size: 12px;
+    }
+    section#concept {
+        font-size: 13px;
+    }
+    .concept-highlight {
+        font-size: 16px;
+    }
+    section#concept p {
+        margin-bottom: .5rem;
+    }
 }
 @media only screen and (max-width: 425px) {
     .bloom-detail .bloom-title {
@@ -455,4 +569,13 @@ section#facility .service-item:hover .service-text{
     .bloom-detail {
         font-size: 16px;
     }
+}
+
+.btn-primary{
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.fact-item {
+    font-size: 20px;
 }

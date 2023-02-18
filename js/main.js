@@ -10,13 +10,7 @@
         }, 1);
     };
     spinner();
-    
-    
-    // Initiate the wowjs
     new WOW().init();
-
-
-    // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('.sticky-top').addClass('shadow-sm').css('top', '0px');
@@ -24,9 +18,6 @@
             $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
         }
     });
-    
-    
-    // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('.back-to-top').fadeIn('slow');
@@ -38,103 +29,58 @@
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
-
-
-    // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
         time: 2000
     });
 
-
-    // Date and time picker
     $('.date').datetimepicker({
         format: 'L'
     });
     $('.time').datetimepicker({
         format: 'LT'
     });
-
-
-    // Header carousel
-    // $(".header-carousel").owlCarousel({
-    //     autoplay: true,
-    //     smartSpeed: 1500,
-    //     loop: true,
-    //     nav: false,
-    //     dots: true,
-    //     items: 1,
-    //     dotsData: true,
-    // });
-
-
-    // Testimonials carousel
-    // $('.testimonial-carousel').owlCarousel({
-    //     autoplay: true,
-    //     smartSpeed: 1000,
-    //     loop: true,
-    //     nav: false,
-    //     dots: true,
-    //     items: 1,
-    //     dotsData: true,
-    // });
     const yearFooter = document.getElementById('year');
     const date = new Date();
     yearFooter.innerText = date.getFullYear();
 
     
 })(jQuery);
-
-
-let tinySdlier = () => {
-  let propertySlider = document.querySelectorAll(".property-slider");
-  if (propertySlider.length > 0) {
-    let tnsSlider = tns({
-      container: ".property-slider",
-      mode: "carousel",
-      speed: 700,
-      gutter: 30,
-      items: 3,
-      autoplay: true,
-      autoplayButtonOutput: false,
-      controlsContainer: "#property-nav",
-      responsive: {
-        0: {
-          items: 1,
-        },
-        700: {
-          items: 2,
-        },
-        900: {
-          items: 3,
-        },
-      },
-    });
-  }
-};
-tinySdlier();
-
-
-// let swiper = new Swiper(".bloom-swiper", {
-//     slidesPerView: 2,
-//     spaceBetween: 30,
-//     loop: true,
-//     pagination: {
-//       el: ".swiper-pagination",
-//       clickable: true,
-//     },
-//     navigation: {
-//       nextEl: ".swiper-button-next",
-//       prevEl: ".swiper-button-prev",
-//     },
-//   });
-
-
   document.addEventListener("DOMContentLoaded", function () {
-    var splide = new Splide(".splide",{
+    let splide = new Splide(".splide.bloom",{
       perPage: 1,
       rewind : true,
-      autoplay:true 
+       autoplay:true 
     } );
     splide.mount();
+    let splidePromotion = new Splide(".splide.promotion",{
+      perPage: 3,
+      rewind : true,
+       autoplay:true 
+    } );
+    splidePromotion.mount();
   });
+
+  function sendEmail() {
+    isFinishForm = !0;
+    let e = getValueById("form-name")
+      , t = getValueById("form-phone").replaceAll("-", "")
+      , s = getValueById("form-email")
+      , a = getValueById("form-message");
+    a || (a = "-");
+    let i = {
+        Subject: "Swisslabs asia Contact Us",
+        Receiver: "swislabs@gmail.com, thanwimol.mnp@cnxdevsoft.com, caroline@acquestresearch.com",
+        HtmlContent: "<div><h3>Contact to book an appointment</h3><p>Name : " + e + " </p><p>Phone number  : " + t + " </p><p>Email : " + s + " </p><p>Message : " + a + " </p></div>"
+    };
+    displayElementById("message-loading", !0),
+    fetch("https://api.cnxdevsoft.com/api/SmtpApi/send-email", {
+        method: "POST",
+        body: JSON.stringify(i),
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json"
+        }
+    }).then((e=>e.json())).then(disabledElementById("btn-submit-sent-email", !0), disabledElementById("form-name", !0), disabledElementById("form-phone", !0), disabledElementById("form-email", !0), disabledElementById("form-message", !0)).then(displayElementById("message-loading", !1)).then(displayElementById("message-success", !0)).then(resetDataForm("form-sent-email")).then(disabledElementById("form-name", !1), disabledElementById("form-phone", !1), disabledElementById("form-email", !1), disabledElementById("form-message", !1)).catch((e=>{}
+    ))
+}

@@ -1,13 +1,13 @@
 /********** Template CSS **********/
 :root {
-    --primary: #B78D65;
-    --gold-light:#c0b598;
-    --primary-green:#14494F;
+    --primary: #987148;
+    --gold-light:#D4A767;
+    --primary-green:#01272E;
     --secondary-green:#114247;
     --light: #F8F8F8;
     --dark: #252525;
     --linear-green-primary:linear-gradient(135deg, rgba(5,69,77,1) 0%, rgba(78,117,122,1) 100%);
-    --linear-gold-primary:linear-gradient(135deg, rgba(145,135,106,1) 0%, rgba(201,186,148,1) 100%);
+    --linear-gold-primary:linear-gradient(135deg, #897A5A 0%, #C1B494 100%);
     --linear-green-light: linear-gradient(135deg, rgb(5 69 77 / 90%) 0%, rgb(78 117 122 / 87%) 100%);
 }
 
