@@ -504,6 +504,9 @@ section#concept{
 .splide.promotion .splide__pagination {
     bottom: 0;
 }
+.form-control,.form-select{
+    border-color: var(--primary);
+}
 @media only screen and (max-width: 1024px) {
     .header-title {
         font-size: 22px;
